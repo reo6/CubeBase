@@ -9,7 +9,7 @@ typedef struct {
     bool running;
     bool ready;
     bool stopped;
-    char* timerText;
+    char timerText[64];
     int frameWidth;
     int frameHeight;
     int fontSize;
