@@ -12,6 +12,6 @@ build: $(SRC)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
 clean:
-	rm -f $(TARGET)
+	rm -rf $(BUILD_DIR)
 
 .PHONY: all clean
