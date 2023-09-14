@@ -49,11 +49,6 @@ void timer_update(Timer *t) {
     }
 
     sprintf(t->timerText, "%.2f", t->currentTime);
-    int len = strlen(t->timerText);
-    if (t->timerText[len - 1] == '.') {
-        strcat(t->timerText, "0");
-    }
-
 }
 
 void timer_draw(Timer *t) {
