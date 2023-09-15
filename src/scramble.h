@@ -19,6 +19,8 @@ typedef struct {
 } Move; // TODO Find a better name
 
 Move random_move();
-Move* generate_scramble(int length);
+void generate_scramble(int length, Move* scramble);
+void move_to_string(Move move, char* move_str);
+void scramble_to_string(Move* scramble, char* scr_str, int length);
 
 #endif // SCRAMBLE_H_
