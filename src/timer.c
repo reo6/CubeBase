@@ -8,7 +8,8 @@
 #include "scramble.h"
 
 #define SCRAMBLE_LENGTH 12
-#define MAX_SCRAMBLE_LENGTH 500
+#define DESCRIPTION_FONTSIZE 30
+#define TIMER_FONTSIZE 80
 
 Timer timer_new(int frameWidth, int frameHeight) {
     Timer timer;
@@ -21,13 +22,8 @@ Timer timer_new(int frameWidth, int frameHeight) {
 
     timer.frameWidth = frameWidth;
     timer.frameHeight = frameHeight;
-    timer.fontSize = 60;
-    timer.descriptionText = "Press SPACE to start/stop";
-    
-    Move scramble_moves[SCRAMBLE_LENGTH];
-    generate_scramble(SCRAMBLE_LENGTH, scramble_moves);
 
-    scramble_to_string(scramble_moves, timer.scramble, SCRAMBLE_LENGTH);
+    generate_scramble(SCRAMBLE_LENGTH, timer.scramble);
 
     return timer;
 }
@@ -43,6 +39,7 @@ void timer_update(Timer *t) {
             t->running = false;
             t->ready = false;
             t->stopped = true;
+            generate_scramble(SCRAMBLE_LENGTH, t->scramble);
         } else {
             if(!t->ready && !t->stopped) {
                 t->ready = true;
@@ -62,6 +59,6 @@ void timer_update(Timer *t) {
 }
 
 void timer_draw(Timer *t) {
-    DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, t->fontSize)) / 2, (t->frameHeight - t->fontSize) / 2, t->fontSize, t->ready ? GREEN : RAYWHITE);
-    DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, 20)) / 2, (t->frameHeight - 20) - 30, 20, RAYWHITE);
+    DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, TIMER_FONTSIZE)) / 2, (t->frameHeight - TIMER_FONTSIZE) / 2, TIMER_FONTSIZE, t->ready ? GREEN : RAYWHITE);
+    DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, DESCRIPTION_FONTSIZE)) / 2, (t->frameHeight - DESCRIPTION_FONTSIZE) - 30, DESCRIPTION_FONTSIZE, RAYWHITE);
 }
