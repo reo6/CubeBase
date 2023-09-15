@@ -1,5 +1,6 @@
 #include <raylib.h>
 #include "timer.h"
+#include "scramble.h"
 
 #define SCREEN_WIDTH 800
 #define SCREEN_HEIGHT 600
