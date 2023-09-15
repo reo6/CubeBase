@@ -14,7 +14,7 @@ int main() {
     srand(time(NULL));
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
-    Timer timer = timer_new(800, 600);
+    Timer timer = timer_new(SCREEN_WIDTH, SCREEN_HEIGHT);
 
     while (!WindowShouldClose()) {
         timer_update(&timer);
