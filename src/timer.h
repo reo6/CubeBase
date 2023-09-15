@@ -4,6 +4,8 @@
 #include <stdbool.h>
 #include "scramble.h"
 
+#define MAX_SCRAMBLE_LENGTH 400
+
 typedef struct {
     double startTime;
     double currentTime;
@@ -14,8 +16,7 @@ typedef struct {
     int frameWidth;
     int frameHeight;
     int fontSize;
-    char* descriptionText;
-    char* scramble;
+    char scramble[MAX_SCRAMBLE_LENGTH];
 } Timer;
 
 // Function prototypes
