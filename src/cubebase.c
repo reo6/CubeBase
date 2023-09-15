@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 #include <raylib.h>
 #include "timer.h"
 #include "scramble.h"
@@ -7,6 +11,8 @@
 #define TITLE "CubeBase"
 
 int main() {
+    srand(time(NULL));
+
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
     Timer timer = timer_new(800, 600);
 
