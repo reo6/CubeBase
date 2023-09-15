@@ -2,6 +2,7 @@
 #define TIMER_H
 
 #include <stdbool.h>
+#include "scramble.h"
 
 typedef struct {
     double startTime;
@@ -14,6 +15,7 @@ typedef struct {
     int frameHeight;
     int fontSize;
     char* descriptionText;
+    char* scramble;
 } Timer;
 
 // Function prototypes

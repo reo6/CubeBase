@@ -2,8 +2,13 @@
 #include <raylib.h>
 #include <string.h>
 #include <stdlib.h>
+#include <assert.h>
 
 #include "timer.h"
+#include "scramble.h"
+
+#define SCRAMBLE_LENGTH 12
+#define MAX_SCRAMBLE_LENGTH 500
 
 Timer timer_new(int frameWidth, int frameHeight) {
     Timer timer;
@@ -18,6 +23,11 @@ Timer timer_new(int frameWidth, int frameHeight) {
     timer.frameHeight = frameHeight;
     timer.fontSize = 60;
     timer.descriptionText = "Press SPACE to start/stop";
+    
+    Move scramble_moves[SCRAMBLE_LENGTH];
+    generate_scramble(SCRAMBLE_LENGTH, scramble_moves);
+
+    scramble_to_string(scramble_moves, timer.scramble, SCRAMBLE_LENGTH);
 
     return timer;
 }
@@ -53,5 +63,5 @@ void timer_update(Timer *t) {
 
 void timer_draw(Timer *t) {
     DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, t->fontSize)) / 2, (t->frameHeight - t->fontSize) / 2, t->fontSize, t->ready ? GREEN : RAYWHITE);
-    DrawText(t->descriptionText, (t->frameWidth - MeasureText(t->descriptionText, 20)) / 2, (t->frameHeight - 20) - 30, 20, RAYWHITE);
+    DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, 20)) / 2, (t->frameHeight - 20) - 30, 20, RAYWHITE);
 }
