@@ -3,6 +3,7 @@
 
 #include <stdbool.h>
 #include "scramble.h"
+#include "colors.h"
 
 #define MAX_SCRAMBLE_LENGTH 400
 
@@ -17,10 +18,12 @@ typedef struct {
     int frameHeight;
     int fontSize;
     char scramble[MAX_SCRAMBLE_LENGTH];
+
+    ColorScheme *scheme;
 } Timer;
 
 // Function prototypes
-Timer timer_new(int frameWidth, int frameHeight);
+Timer timer_new(int frameWidth, int frameHeight, ColorScheme *scheme);
 void timer_update(Timer *t);
 void timer_draw(Timer *t);
 

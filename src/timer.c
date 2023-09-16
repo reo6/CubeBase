@@ -6,12 +6,13 @@
 
 #include "timer.h"
 #include "scramble.h"
+#include "colors.h"
 
 #define SCRAMBLE_LENGTH 12
 #define DESCRIPTION_FONTSIZE 30
 #define TIMER_FONTSIZE 80
 
-Timer timer_new(int frameWidth, int frameHeight) {
+Timer timer_new(int frameWidth, int frameHeight, ColorScheme *scheme) {
     Timer timer;
 
     timer.startTime = 0;
@@ -22,8 +23,10 @@ Timer timer_new(int frameWidth, int frameHeight) {
 
     timer.frameWidth = frameWidth;
     timer.frameHeight = frameHeight;
+    timer.scheme = scheme;
 
     generate_scramble(SCRAMBLE_LENGTH, timer.scramble);
+
 
     return timer;
 }
@@ -59,6 +62,6 @@ void timer_update(Timer *t) {
 }
 
 void timer_draw(Timer *t) {
-    DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, TIMER_FONTSIZE)) / 2, (t->frameHeight - TIMER_FONTSIZE) / 2, TIMER_FONTSIZE, t->ready ? GREEN : RAYWHITE);
-    DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, DESCRIPTION_FONTSIZE)) / 2, (t->frameHeight - DESCRIPTION_FONTSIZE) - 30, DESCRIPTION_FONTSIZE, RAYWHITE);
+    DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, TIMER_FONTSIZE)) / 2, (t->frameHeight - TIMER_FONTSIZE) / 2, TIMER_FONTSIZE, t->ready ? GREEN : t->scheme->text);
+    DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, DESCRIPTION_FONTSIZE)) / 2, (t->frameHeight - DESCRIPTION_FONTSIZE) - 30, DESCRIPTION_FONTSIZE, t->scheme->text);
 }
