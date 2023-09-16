@@ -14,13 +14,9 @@
 
 int main() {
     srand(time(NULL));
+    scheme_init();
 
-    ColorScheme greenscheme;
-    greenscheme.background = c_darkgreen;
-    greenscheme.text = c_greenwhite;
-    greenscheme.text_secondary = c_greenwhite;
-
-    ColorScheme current_scheme = greenscheme;
+    ColorScheme current_scheme = s_vintage;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
     Timer timer = timer_new(SCREEN_WIDTH, SCREEN_HEIGHT, &current_scheme);
