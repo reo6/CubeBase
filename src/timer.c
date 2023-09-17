@@ -58,6 +58,10 @@ void timer_update(Timer *t) {
         t->stopped = false;
     }
 
+    if(IsKeyPressed(KEY_S)) {
+        timer_reset_scramble(t);
+    }
+
     sprintf(t->timerText, "%.2f", t->currentTime);
 }
 
