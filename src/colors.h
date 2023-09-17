@@ -21,6 +21,11 @@ typedef struct {
 extern ColorScheme s_greenscheme;
 extern ColorScheme s_vintage;
 
+extern ColorScheme s_themes[];
+
+
+#define THEMES_LENGTH 2
+
 ColorScheme scheme_new(Color background, Color text, Color t2);
 void scheme_init();
 

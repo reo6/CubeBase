@@ -16,15 +16,25 @@ int main() {
     srand(time(NULL));
     scheme_init();
 
-    ColorScheme current_scheme = s_vintage;
+    int current_scheme = 0;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
-    Timer timer = timer_new(SCREEN_WIDTH, SCREEN_HEIGHT, &current_scheme);
+    Timer timer = timer_new(SCREEN_WIDTH, SCREEN_HEIGHT, &s_themes[current_scheme]);
 
     while (!WindowShouldClose()) {
+        if(IsKeyPressed(KEY_TAB)) {
+            if(current_scheme == THEMES_LENGTH-1) {
+                current_scheme = 0;
+            } else {
+                current_scheme++;
+            }
+
+            timer.scheme = &s_themes[current_scheme];
+        }
+
         timer_update(&timer);
         BeginDrawing();
-        ClearBackground(current_scheme.background);
+        ClearBackground(s_themes[current_scheme].background);
         timer_draw(&timer);
         EndDrawing();
     }
