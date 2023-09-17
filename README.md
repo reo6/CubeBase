@@ -1,6 +1,13 @@
-# CubeBase
+<p align=center>
+  <img src="./resources/icon.png">
+  <h1 align=center>CubeBase</h1>
+  <p align=center>A simple all-in-one speed-cubing application.</p>
+</p>
 
-A simple all-in-one speed-cubing application.
+
+> [!NOTE]
+> Please check out the Wikipedia [Speedcubing article](https://en.wikipedia.org/wiki/Speedcubing) and [cstimer.net](https://cstimer.net) if you are not familiar with the terms.
+
 
 ## Features
 
