@@ -26,5 +26,6 @@ typedef struct {
 Timer timer_new(int frameWidth, int frameHeight, ColorScheme *scheme);
 void timer_update(Timer *t);
 void timer_draw(Timer *t);
+void timer_reset_scramble(Timer *t);
 
 #endif // TIMER_H

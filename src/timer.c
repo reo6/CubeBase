@@ -42,7 +42,7 @@ void timer_update(Timer *t) {
             t->running = false;
             t->ready = false;
             t->stopped = true;
-            generate_scramble(SCRAMBLE_LENGTH, t->scramble);
+            timer_reset_scramble(t);
         } else {
             if(!t->ready && !t->stopped) {
                 t->ready = true;
@@ -64,4 +64,9 @@ void timer_update(Timer *t) {
 void timer_draw(Timer *t) {
     DrawText(t->timerText, (t->frameWidth - MeasureText(t->timerText, TIMER_FONTSIZE)) / 2, (t->frameHeight - TIMER_FONTSIZE) / 2, TIMER_FONTSIZE, t->ready ? GREEN : t->scheme->text);
     DrawText(t->scramble, (t->frameWidth - MeasureText(t->scramble, DESCRIPTION_FONTSIZE)) / 2, (t->frameHeight - DESCRIPTION_FONTSIZE) - 30, DESCRIPTION_FONTSIZE, t->scheme->text);
+}
+
+void timer_reset_scramble(Timer *t) {
+    memset(t->scramble, '\0', SCRAMBLE_LENGTH);
+    generate_scramble(SCRAMBLE_LENGTH, t->scramble);
 }
