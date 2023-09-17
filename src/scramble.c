@@ -12,7 +12,6 @@ int get_random(int min, int max) {
 void generate_scramble(int length, char scramble[]) {
     const char moves[] = MOVES;
     int index = 0;
-    srand(time(NULL));
     char previous_move = ' ';
 
     for (int i = 0; i < length; i++) {
