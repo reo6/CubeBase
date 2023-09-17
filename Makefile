@@ -9,6 +9,7 @@ TARGET = $(BUILD_DIR)/cubebase
 
 build: $(SRC)
 	mkdir -p $(BUILD_DIR)
+	cp -r resources/* $(BUILD_DIR)
 	$(CC) $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)
 
 clean:

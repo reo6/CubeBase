@@ -19,6 +19,7 @@ int main() {
     int current_scheme = 0;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, TITLE);
+    SetWindowIcon(LoadImage("icon.png"));
     Timer timer = timer_new(SCREEN_WIDTH, SCREEN_HEIGHT, &s_themes[current_scheme]);
 
     while (!WindowShouldClose()) {
