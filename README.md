@@ -35,9 +35,8 @@ You can find the executable at ``build/cubebase``.
 
 ### Keybindings
 
-| Key   	| Function                                            	|
-|-------	|-----------------------------------------------------	|
-| space 	| Hold and release to start the timer, press to stop. 	|
-| s     	| Reset the scramble                                  	|
-| tab   	| Browse color schemes                                	|
-
+| Key              	| Function                                            	|
+|------------------	|-----------------------------------------------------	|
+| <kbd>Space</kbd> 	| Hold and release to start the timer, press to stop. 	|
+| <kbd>S</kbd>     	| Reset the scramble                                  	|
+| <kbd>TAB</kbd>   	| Browse color schemes                                	|
