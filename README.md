@@ -21,7 +21,7 @@
 
 Build dependencies:
 
-- GCC
+- GCC/Clang
 - make
 - raylib
 
