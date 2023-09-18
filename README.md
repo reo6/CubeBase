@@ -17,7 +17,7 @@
 - [ ] Progress Tracker
 - [ ] Advanced configuration
 
-## Usage
+## Installation
 
 Go to [releases](https://github.com/reo6/CubeBase/releases) for Windows and Linux builds.
 
