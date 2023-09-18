@@ -17,13 +17,15 @@
 - [ ] Progress Tracker
 - [ ] Advanced configuration
 
-## Usage
+## Building
 
 Build dependencies:
 
 - GCC/Clang
 - make
 - raylib
+
+### Linux
 
 Building:
 
@@ -32,6 +34,10 @@ make build
 ```
 
 You can find the executable at ``build/cubebase``.
+
+### Windows
+
+You can use the [``./build-windows-mingw.sh``](./build-windows-mingw.sh) script to build for windows. Follow the instructions provided in script.
 
 ### Keybindings
 
