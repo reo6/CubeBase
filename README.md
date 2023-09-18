@@ -22,7 +22,7 @@
 Build dependencies:
 
 - GCC
-- cmake
+- make
 - raylib
 
 Building:
