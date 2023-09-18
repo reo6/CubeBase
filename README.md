@@ -17,6 +17,10 @@
 - [ ] Progress Tracker
 - [ ] Advanced configuration
 
+## Usage
+
+Go to [releases](https://github.com/reo6/CubeBase/releases) for Windows and Linux builds.
+
 ## Building
 
 Build dependencies:
@@ -25,7 +29,7 @@ Build dependencies:
 - make
 - raylib
 
-### Linux
+#### Linux
 
 Building:
 
@@ -35,7 +39,7 @@ make build
 
 You can find the executable at ``build/cubebase``.
 
-### Windows
+#### Windows
 
 You can use the [``./build-windows-mingw.sh``](./build-windows-mingw.sh) script to build for windows. Follow the instructions provided in script.
 
