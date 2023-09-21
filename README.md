@@ -8,15 +8,6 @@
 > [!NOTE]
 > Please check out the Wikipedia [Speedcubing article](https://en.wikipedia.org/wiki/Speedcubing) and [cstimer.net](https://cstimer.net) if you are not familiar with the terms.
 
-
-## Features
-
-- [X] Pragmatical speedcubing timer
-- [X] Scramble generator
-- [X] Color Schemes
-- [ ] Progress Tracker
-- [ ] Advanced configuration
-
 ## Installation
 
 Go to [releases](https://github.com/reo6/CubeBase/releases) for Windows and Linux builds.
